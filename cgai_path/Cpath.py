@@ -43,7 +43,7 @@ class CGAIPATH(object):
 
         return result
 
-    def get_files(self,path,missing=True):
+    def get_files(self,path,missing=False):
         """
         获取路径下的所有文件路径
         """
@@ -92,6 +92,7 @@ class CGAIPATH(object):
 
     def get_missing_files(self,ori_path,patter,paths):
         """
+        注意： 获取缺失文件，必须是序列
         获取缺失的文件路径
         ori_path: 原始格式化路径
         patter: 匹配格式
@@ -102,12 +103,13 @@ class CGAIPATH(object):
         for path in paths:
             number = path.replace(pre,'').replace(_tail,'')
             numbers.append(int(number))
-        min_num = min(numbers)
-        max_num = max(numbers)
-        miss_files = []
-        for i in range(min_num,max_num+1):
-            upath = pre + patter%i + _tail
-            if upath not in paths:
-                miss_files.append(upath)
+        if numbers:
+            min_num = min(numbers)
+            max_num = max(numbers)
+            miss_files = []
+            for i in range(min_num,max_num+1):
+                upath = pre + patter%i + _tail
+                if upath not in paths:
+                    miss_files.append(upath)
 
         return miss_files
