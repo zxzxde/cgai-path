@@ -1,3 +1,4 @@
+from genericpath import isfile
 import os
 import re
 import glob 
@@ -61,6 +62,8 @@ class CGAIPATH(object):
         else:
             if os.path.isdir(path): # 目录
                 fpaths = [os.path.join(path,i) for i in path if os.path.isfile(os.path.join(path,i))]
+            elif os.path.isfile(path): # 本身是文件
+                fpaths = [path]
         if missing:
             return fpaths,missing_files
         else:
