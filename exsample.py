@@ -3,13 +3,14 @@ from cgai_path import CGAIPATH
 
 
 
-p = r'C:\PyOut\Test\test_hiero\v001\musk_%04d.exr'
+# p = r'C:\PyOut\Test\test_hiero\v001\musk_%04d.exr'
+p = r'C:\PyOut\Test\test_hiero\v001\musk_0001.exr'
 
 cpath = CGAIPATH()
 
 # 判断提供的路径是否为序列
 result = cpath.isSequence(p)
-print(result)  # ('C:\\PyOut\\Test\\test_hiero\\v001\\musk_', '%04d')
+print('isSequence:',result)  # ('C:\\PyOut\\Test\\test_hiero\\v001\\musk_', '%04d')
 
 if result:
     filename = cpath.get_filename(p)
@@ -17,7 +18,7 @@ if result:
 
 # 获取文件序列
 paths,missings = cpath.get_files(p)
-print(paths) # ['C:\\PyOut\\Test\\test_hiero\\v001\\musk_0001.exr',...,'C:\\PyOut\\Test\\test_hiero\\v001\\musk_0049.exr']
+print('paths:',paths) # ['C:\\PyOut\\Test\\test_hiero\\v001\\musk_0001.exr',...,'C:\\PyOut\\Test\\test_hiero\\v001\\musk_0049.exr']
 print()
 print(missings)
 
