@@ -49,8 +49,9 @@ class CGAIPATH(object):
         """
         fpaths = []
         missing_files = []
-        pre,patter = self.isSequence(path)
-        if patter:  # 序列路径
+        result = self.isSequence(path)
+        if result:  # 序列路径
+            pre,patter = result
             dir_path,file_name = os.path.split(path)
             count = int(self.get_pnum(patter))
             file_name = file_name.replace(patter,'?'*count) 

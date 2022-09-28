@@ -2,7 +2,7 @@
 from .Cpath import *
 
 __title__ = 'cgai_path'
-__version__ = '0.0.2'
+__version__ = '0.0.3'
 __author__ = 'Master Zhang'
 __author_email__ = '360014296@qq.com'
 __license__ = 'GPLv3'
