@@ -1,14 +1,3 @@
-#cgai-path
-
-
-#### 功能
-
-应用于CG行业的文件路径
-
-
-#### 基本使用
-
-```python
 import os
 from cgai_path import CGAIPATH
 
@@ -41,4 +30,3 @@ print(filename)  # musk_0001
 
 
 
-```
