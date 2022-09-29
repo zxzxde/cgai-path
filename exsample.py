@@ -17,17 +17,18 @@ if result:
     print(filename)  # musk
 
 # 获取文件序列
-paths,missings = cpath.get_files(p)
+paths,missings = cpath.get_files(p,missing=True)
 print('paths:',paths) # ['C:\\PyOut\\Test\\test_hiero\\v001\\musk_0001.exr',...,'C:\\PyOut\\Test\\test_hiero\\v001\\musk_0049.exr']
 print()
 print(missings)
 
 
 a = r'C:\PyOut\Test\test_hiero\v001\musk_0001.exr'
-
+# a = 'LYX10_SH0040_cmp_cp_v001.mov'
+a = r'C:\PyOut\Test\test_hiero\v001\LYX10_SH0040_cmp_cp_v001.mov'
 # 获取文件名称
-filename = cpath.get_filename(a)
-print(filename)  # musk_0001
+filename = cpath.get_no_version_name(a)
+print('filename:',filename)  # musk_0001
 
 
 
