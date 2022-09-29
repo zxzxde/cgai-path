@@ -43,6 +43,23 @@ class CGAIPATH(object):
 
         return result
 
+    def get_no_version_name(self,path,ignores=['.','_']):
+        """
+        获取去除版本的文件名称
+        """
+        fullname = os.path.basename(path)
+        result = False
+        try:
+            g = re.match('(.*)(v\d+)',fullname)
+            result = g.group(1)
+            if result[-1] in ignores:
+                result = result[:-1]
+        except Exception as VERR:
+            print(VERR)
+
+        return result
+
+
     def get_files(self,path,missing=False):
         """
         获取路径下的所有文件路径
@@ -88,6 +105,8 @@ class CGAIPATH(object):
                 filename = name[:-1]
 
         return filename
+
+
 
 
     def get_missing_files(self,ori_path,patter,paths):
