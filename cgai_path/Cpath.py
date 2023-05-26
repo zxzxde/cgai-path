@@ -1,4 +1,3 @@
-from genericpath import isfile
 import os
 import re
 import glob 
@@ -55,7 +54,7 @@ class CGAIPATH(object):
             if result[-1] in ignores:
                 result = result[:-1]
         except Exception as VERR:
-            print(VERR)
+            result = os.path.splitext(fullname)[0]
 
         return result
 

@@ -25,7 +25,7 @@ print(missings)
 
 a = r'C:\PyOut\Test\test_hiero\v001\musk_0001.exr'
 # a = 'LYX10_SH0040_cmp_cp_v001.mov'
-a = r'C:\PyOut\Test\test_hiero\v001\LYX10_SH0040_cmp_cp_v001.mov'
+# a = r'C:\PyOut\Test\test_hiero\v001\LYX10_SH0040_cmp_cp_v001.mov'
 # 获取文件名称
 filename = cpath.get_no_version_name(a)
 print('filename:',filename)  # musk_0001
